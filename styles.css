@@ -1,0 +1,752 @@
+/* =========================
+   styles.css — Unificado
+   ========================= */
+
+/* Reset básico e variáveis */
+:root{
+    --bg: #f7f7f8;
+    --surface: #ffffff;
+    --primary: #303092;    /* azul principal - ajuste conforme referência */
+    --primary-600: #1d1d61;
+    --muted: #71717a;
+    --radius: 12px;
+    --container: 1100px;
+    --gap: 1.25rem;
+    --shadow: 0 6px 22px rgba(11,99,214,0.08);
+    --radius-sm: 8px;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color-scheme: light;
+
+    /* WhatsApp floating button */
+    --whatsapp-size: 64px;        /* tamanho do botão desktop */
+    --whatsapp-size-mobile: 52px; /* tamanho em mobile */
+    --whatsapp-bg: #25D366;       /* cor padrão do WhatsApp — altere se desejar */
+    --whatsapp-offset: 20px;      /* distância da borda direita/baixo */
+    --whatsapp-z: 1100;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* Container */
+.container{
+  max-width: var(--container);
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem 1rem; /* reduzido para menos "ar" nas laterais */
+  box-sizing: border-box;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255,255,255,0.85));
+  position:sticky;
+  top:0;
+  z-index:80;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:var(--gap);
+}
+
+/* Logo */
+.logo img{
+  max-width:100%;
+  width:200px;       /* ajuste conforme a proporção da logo */
+  height: 80px;
+  object-fit: cover;
+  display:block;
+}
+
+/* Nav */
+.main-nav{margin-left:1rem}
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:1rem;
+  margin:0;
+  padding:0;
+  align-items:center;
+}
+.main-nav a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:0.5rem 0.6rem;
+  border-radius:8px;
+  font-weight:600;
+}
+.main-nav a:hover{color:var(--primary)}
+
+.header-cta{margin-left:auto; display:flex; gap:0.6rem; align-items:center}
+
+/* Buttons — globais */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:0.95rem;
+  border:0;
+  cursor:pointer;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover{background:var(--primary-600)}
+
+.btn-outline{
+  background:transparent;
+  color:var(--primary);
+  border:1px solid rgba(11,99,214,0.12);
+}
+.btn-ghost{
+  background:transparent;
+  color:#111827;
+  border:1px solid rgba(0,0,0,0.06);
+}
+
+/* Nav toggle (mobile) */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:0;
+  margin-left:0.5rem;
+  padding:0.4rem;
+  cursor:pointer;
+}
+.nav-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#111827;
+  margin:4px 0;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.nav-toggle.open span:nth-child(1){ transform: translateY(6px) rotate(45deg) }
+.nav-toggle.open span:nth-child(2){ opacity:0 }
+.nav-toggle.open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg) }
+
+/* HERO: novo degradê bottom->top e layout (sobrescreve estilos anteriores do hero) */
+.hero{
+  padding:3.25rem 0;
+  /* degrade de baixo para cima: #081244 embaixo -> #303092 em cima */
+  background: linear-gradient(to top, #081244 0%, #303092 100%);
+  color: #ffffff; /* texto claro sobre o fundo escuro */
+}
+
+/* hero-inner mantém a partição 2 colunas (conteúdo | logo) */
+.hero-inner{
+  display:grid;
+  grid-template-columns: 1fr 460px;
+  gap:2.25rem;
+  align-items:center;
+}
+
+/* Pretítulo acima do H1 */
+.hero-pretitle{
+  font-size:0.95rem;
+  font-weight:700;
+  margin-bottom:0.6rem;
+  opacity:0.95;
+  letter-spacing:0.2px;
+}
+
+/* Ajustes de texto no hero para legibilidade no fundo escuro */
+.hero-content h1{
+  font-size:2rem;
+  margin:0 0 0.75rem 0;
+  line-height:1.12;
+  color:#ffffff;
+}
+.hero .lead{
+  color: rgba(255,255,255,0.85);
+  margin-bottom:1.25rem;
+}
+
+/* Visual (logo) */
+.hero-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-logo{
+  max-width:100%;
+  width:500px;       /* ajuste conforme a proporção da logo */
+  height: auto;
+  object-fit: contain;
+  display:block;
+}
+
+/* BOTÕES no hero */
+/* Sobrescreve .btn-primary apenas dentro do hero: laranja #f6821f */
+.hero .btn-primary{
+  background: #f6821f;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(246,130,31,0.12);
+  border: 0;
+}
+
+/* Botão branco para "Solicitar Orçamento" (usado no hero) */
+.btn-white{
+  background: #ffffff;
+  color: #0b1226; /* texto escuro */
+  font-weight:700;
+  border-radius:10px;
+  padding:0.6rem 1rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Pequeno ajuste de espaçamento entre os botões */
+.hero-buttons{
+    display:flex;
+    gap:.75rem;
+    flex-wrap:wrap
+}
+
+/* Visual placeholder (mantido caso queira usar) */
+.img-placeholder{
+  min-height:260px;
+  border-radius:14px;
+  background:
+    linear-gradient(180deg, rgba(11,99,214,0.06), rgba(11,99,214,0.02)),
+    url('hero-placeholder.jpg');
+  background-size:cover;
+  background-position:center;
+  box-shadow: var(--shadow);
+}
+
+/* Sections */
+.section{padding:1rem 0}
+.section-title{
+  font-size:1.8rem;
+  margin:0 0 .2rem 0;
+}
+.section-intro{color:var(--muted); margin-top: 0; margin-bottom:1.5rem}
+
+/* Services grid */
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+  margin-top:1rem;
+}
+.service-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:1rem;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.04);
+}
+.service-media{
+  height:190px;
+  border-radius:10px;
+  margin-bottom:0.85rem;
+  background:linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+}
+
+/* Why grid */
+.why-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+  margin-top:1rem;
+}
+.why-item{
+  background:linear-gradient(180deg,#fff,#fbfdff);
+  border-radius:var(--radius-sm);
+  padding:1rem;
+  border:1px solid rgba(10,10,10,0.02);
+}
+
+/* CTA */
+.section-cta{
+  background:linear-gradient(45deg, rgba(214, 150, 11, 0.05), rgba(11, 99, 214, 0.05)); /*#F6821F*/
+  padding:5rem 0;
+  margin-top:2rem;
+}
+.cta-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between
+}
+.cta-inner .section-intro {
+  margin-bottom:0;
+}
+
+.cta-actions .btn{min-width:220px}
+
+/* Footer */
+.site-footer{
+  padding:1.25rem 0;
+  background:#202020;
+  border-top:1px solid rgb(15, 23, 42);
+}
+
+.footer-inner{display:flex; justify-content:space-between; gap:1rem; align-items:center; color: #fff;}
+.footer-right a{margin-left:0.75rem; color:var(--muted); text-decoration:none; font-size:0.95rem}
+
+/* Center helper */
+.center{text-align:center; margin-top: 20px;}
+
+
+/* --- LAYOUT DE SERVIÇOS E ESTILOS BÁSICOS DO CARROSSEL --- */
+/* (Estes são para a estrutura geral da página de serviços e o container do carrossel,
+   não são estilos do Tiny-Slider em si) */
+.services-page { padding-top: 1.5rem; }
+
+.services-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* -- Colunas identadas --*/
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.services-column { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.service-block {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:0.85rem;
+}
+.service-block h3 { margin:0; font-size:1.15rem; }
+.service-block p { margin:0; color:var(--muted); }
+
+/* Container do carrossel (pai do track) */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* ESSENCIAL para cortar os slides que estão fora da vista */
+  box-sizing: border-box;
+  border-radius: 8px; /* Cantos arredondados para o carrossel */
+}
+
+/* O "track" do carrossel, que o Tiny-Slider usa como container */
+.carousel-track {
+  display: flex; /* Para que os slides fiquem lado a lado */
+  flex-wrap: nowrap; /* Impede quebra de linha dos slides */
+  /* Tiny-Slider adiciona seu próprio transform e transition */
+  /* Removido o transition manual aqui, pois o Tiny-Slider gerencia isso */
+  /* will-change: transform; */
+}
+
+/* Cada slide individual */
+.carousel-slide {
+  flex-shrink: 0; /* Impede que os slides diminuam */
+  width: 100%; /* Cada slide ocupa 100% da largura do .carousel */
+  /* Tiny-Slider gerencia a largura exata via JS */
+}
+
+/* Imagens dentro dos slides */
+.carousel-slide img {
+  width: 100%; /* A imagem preenche a largura do slide */
+  height: clamp(180px, 22vw, 280px); /* Altura flexível, mas controlada */
+  object-fit: cover; /* Garante que a imagem preencha sem distorção */
+  display: block; /* Remove espaços extras */
+  border-radius: 8px; /* Cantos arredondados para as imagens */
+}
+
+
+  
+/* --- Estilos para os controles gerados pelo Tiny-Slider --- */
+
+/* Botões de navegação (setas) */
+/* Posicionamento dos botões (seus próprios botões) */
+.carousel {
+  position: relative; /* Para que os botões absolutos se posicionem em relação a ele */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.45); /* Cor de fundo customizada */
+  color: #fff; /* Cor do ícone/texto */
+  border: 0; /* Sem borda */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.15); /* Sombra */
+  transition: transform .12s ease, background .12s ease;
+  opacity: 0.95;
+  z-index: 10;
+  font-size: 1.5rem;
+  line-height: 1; /* Para alinhar o texto/ícone verticalmente */
+  /* Remova o texto "‹" e "›" se for usar ícones, ou ajuste o font-size */
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.06);
+    background-color: rgba(0, 0, 0, 0.6); /* Cor de fundo no hover */
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(.98);
+}
+
+
+  
+/* Estilo para os indicadores (bolinhas) - seus próprios indicadores */
+.carousel-indicators {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px; /* Posição na parte inferior */
+    display: flex;
+    gap: 6px; /* Espaçamento entre as bolinhas */
+    z-index: 6;
+}
+
+.carousel-indicators > button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.6); /* Cor padrão da bolinha */
+    cursor: pointer;
+    transition: transform .12s ease, background .12s ease;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.12);
+    padding: 0; /* Remove padding extra */
+    font-size: 0; /* Esconde o texto "1, 2, 3" que o JS pode ter adicionado */
+    line-height: 0; /* Ajuda a esconder o texto */
+}
+
+/* Indicador ativo (usando a nova classe 'carousel-indicator-active') */
+.carousel-indicators > button.carousel-indicator-active {
+    background: #fff; /* Cor da bolinha ativa */
+    transform: scale(1.15); /* Um pequeno zoom na ativa */
+}
+
+
+
+  
+/* Página Sobre --------------------------------------------------------------------------------------*/
+.hero-sobre{
+  padding:9rem 0;
+  background: linear-gradient(to top, #081244 0%, #303092 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.hsob {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.h p{
+  font-size: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-toggle span{
+  display:block;
+  width:22px;
+  height:2px;
+  background:#111827;
+  margin:4px 0;
+  transition:transform .2s ease, opacity .2s ease
+}
+.nav-toggle.open span:nth-child(1){transform: translateY(6px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform: translateY(-6px) rotate(-45deg)}
+
+/* SOBRE - nossa história: duas colunas (texto | logo) */
+.sobre-historia{padding:2.25rem 0 1.5rem 0}
+.sobre-grid{display:grid; grid-template-columns: 1fr 420px; gap:2rem; align-items:center;}
+.historia-text h2{font-size:1.6rem; color:var(--primary); margin-bottom:.6rem}
+.historia-text p{color:#1f2937; margin-bottom:0.9rem; font-size:1rem; line-height:1.6}
+.historia-logo{display:flex; flex-direction:column; align-items:center; gap:1rem; text-align:center}
+.logo-big{max-width:100%; width:340px; height:auto; object-fit:contain;}
+
+/* destaques ao lado da logo */
+.historia-destaques{list-style:none; padding:0; margin:0; color:var(--muted); font-weight:600}
+.historia-destaques li{padding:6px 0; border-top:1px dashed rgba(15,23,42,0.04); width:100%}
+
+/* VALORES / MISSÃO / VISÃO */
+.valores{padding:1rem 0 2rem 0}
+.valores-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1rem;
+  align-items:stretch
+}
+.valor-card{
+  background:var(--surface);
+  padding: 2.2rem 1.5rem;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  text-align:center
+}
+.valor-card h3{color:var(--primary); margin:0; margin-bottom: .5rem;}
+.valor-card p{color:var(--muted); margin:0}
+
+/*Página Contato ------------------------------------------------------------------------------------*/
+
+/* CONTACT SECTION LAYOUT */
+.contato-section{
+  padding:2rem 0;
+}
+.contato-inner{padding-top:0;}
+.contato-grid{
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:2rem;
+  align-items:start;
+}
+
+/* Form wrapper */
+.contato-form-wrapper{
+  background:var(--surface);
+  padding:1.25rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.contato-form-wrapper h2{margin:0 0 .5rem 0; color:var(--primary)}
+.contato-form-wrapper .muted{color:var(--muted); margin-bottom:1rem}
+
+/* Form elements */
+.contato-form .form-row{margin-bottom:0.85rem}
+.contato-form label{display:block; font-weight:700; margin-bottom:0.35rem; color:#111827}
+.contato-form input[type="text"],
+.contato-form input[type="email"],
+.contato-form input[type="tel"],
+.contato-form textarea{
+  width:100%;
+  padding:0.7rem 0.85rem;
+  border-radius:8px;
+  border:1px solid rgba(15,23,42,0.08);
+  background:#fff;
+  font-size:0.95rem;
+  color:#111827;
+  box-shadow:inset 0 1px 0 rgba(0,0,0,0.02);
+}
+.contato-form textarea{resize:vertical; min-height:120px}
+
+/* two column inputs */
+.two-cols{display:flex; gap:0.8rem}
+.two-cols .col{flex:1}
+
+/* actions */
+.form-actions{display:flex; gap:0.75rem; align-items:center}
+.form-actions .btn{padding:0.6rem 1rem}
+.form-feedback{margin-top:0.8rem; padding:0.65rem 0.8rem; border-radius:8px; display:block}
+.form-feedback.sending{background:#fff7e6; color:#7a4b00}
+.form-feedback.success{background:#e6f9f0; color:#065f46}
+.form-feedback.error{background:#ffe6e6; color:#6b0b0b}
+
+/* Info aside */
+.contato-info{
+  background:var(--surface);
+  padding:1.25rem;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.contato-info h3{margin:0 0 .6rem 0; color:var(--primary)}
+.info-list{list-style:none; padding:0; margin:0 0 1rem 0; color:#111827}
+.info-list li{margin-bottom:0.6rem}
+.info-list a{color:var(--primary); text-decoration:none}
+
+/* map */
+.map-wrap{border-radius:8px; overflow:hidden; box-shadow:0 8px 18px rgba(2,6,23,0.06); margin-bottom:1rem}
+
+/* quick actions */
+.quick-actions{display:flex; gap:0.6rem; margin-top:0.5rem}
+
+
+/* WhatsApp floating button -------------------------------------------------------------------------*/
+.whatsapp-float{
+  position:fixed;
+  right:var(--whatsapp-offset);
+  bottom:var(--whatsapp-offset);
+  width:var(--whatsapp-size);
+  height:var(--whatsapp-size);
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--whatsapp-bg);
+  color:#fff;
+  text-decoration:none;
+  box-shadow: 0 8px 28px rgba(2,6,23,0.18);
+  z-index:var(--whatsapp-z);
+  transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  width: 90px;
+  height: 90px;
+}
+
+/* leve zoom ao passar o mouse */
+.whatsapp-float:hover,
+.whatsapp-float:focus{
+  transform: scale(1.10);
+  box-shadow: 0 14px 36px rgba(2,6,23,0.22);
+}
+
+/* efeito ao clicar (feedback) */
+.whatsapp-float:active{
+  transform: scale(0.98);
+}
+
+/* SVG dentro do botão */
+.whatsapp-float svg{
+  width: 32px;
+  height: 32px;
+  display:block;
+  pointer-events:none;
+}
+
+/* acessibilidade: foco bem visível */
+.whatsapp-float:focus{
+  box-shadow: 0 0 0 4px rgba(37,211,102,0.14), 0 14px 36px rgba(2,6,23,0.22);
+  border-radius:50%;
+}
+
+/* RESPONSIVIDADE -------------------------------------------------------------------------*/
+/* adaptações mobile (menor e menos intrusivo) */
+@media (max-width:720px){
+  .whatsapp-float{
+    width:var(--whatsapp-size-mobile);
+    height:var(--whatsapp-size-mobile);
+    right:14px;
+    bottom:14px;
+  }
+  .whatsapp-float svg{ width:20px; height:20px; }
+
+  /* Ajustado para uma coluna para melhor legibilidade */
+  .services-columns{ grid-template-columns: 1fr; }
+  /* Ajustado para uma altura mais adequada em mobile */
+  .carousel-slide img{ height:clamp(160px, 40vw, 240px); }
+  /* Ajuste de tamanho dos botões do Tiny-Slider em mobile */
+  .tns-controls button{ width:34px; height:34px; font-size: 1.2rem; }
+}
+@media (max-width: 980px){
+  .hero-inner{
+    grid-template-columns: 1fr; /* pilha vertical */
+  }
+  /* Forçar logo a aparecer primeiro em mobile (logo em cima) */
+  .hero-visual{ order: -1; margin-bottom:1rem; }
+  .hero-logo{
+    max-width:110%;
+    width: 500px;
+    height: 140px;
+    object-fit: cover;
+    }
+  .hero-content{ text-align:center; }
+  .hero-pretitle{ text-align:center; }
+  .hero-buttons{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .services-grid{grid-template-columns: repeat(2, 1fr)}
+  .why-grid{grid-template-columns: 1fr}
+  .cta-inner{flex-direction:column; gap:1rem; text-align:center}
+
+  /* Mantém 2 colunas para tablets, mas com altura ajustada */
+  .services-columns{ grid-template-columns: repeat(2,1fr); }
+  .carousel-slide img{ height:clamp(200px, 26vw, 280px); }
+}
+@media (max-width: 720px){
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .header-cta{display:none}
+  .container{padding:1rem}
+  .services-grid{grid-template-columns: 1fr}
+  .services-columns{ grid-template-columns: 1fr; }
+  
+  .hero-content h1{font-size:1.5rem}
+  .nav-toggle{margin-left:auto}
+  .main-nav.open{
+    display:block;
+    position:absolute;
+    top:64px;
+    right:16px;
+    background:var(--surface);
+    padding:0.75rem;
+    border-radius:8px;
+    box-shadow:0 10px 30px rgba(2,6,23,0.08);
+  }
+  .hero-buttons{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .main-nav.open ul{flex-direction:column; gap:0.4rem}
+  .main-nav.open a{display:block; padding:0.6rem 0.9rem}
+
+  .hero-logo{ width: 300px; }
+  .hero-content h1{ font-size:1.4rem; }
+
+  /* Carrossel (ajustes específicos para mobile, se houver necessidade de sobrescrever) */
+  /* Já definido acima no @media (max-width:720px) para botões do Tiny-Slider */
+}
+
+/* Pequenos refinamentos finais */
+a{transition:all .15s ease}
+img{max-width:100%; height:auto; display:block}
+
+
+
+/* RESPONSIVIDADE específica para contato */
+@media (max-width: 1000px){
+  .contato-grid{grid-template-columns: 1fr 340px}
+  .hero-contact .hero-inner{grid-template-columns:1fr 180px}
+}
+@media (max-width: 720px){
+  .main-nav{display:none}
+  .nav-toggle{display:block}
+  .header-cta{display:none}
+  .hero-contact .hero-inner{grid-template-columns:1fr; gap:0.6rem}
+  .contato-grid{grid-template-columns:1fr; gap:1rem}
+  .two-cols{flex-direction:column}
+  .form-actions{flex-direction:column; align-items:stretch}
+  .container{padding:1rem}
+  .whatsapp-float{right:14px; bottom:14px; width:52px; height:52px}
+}
+
+/* small helpers used by contact page */
+.muted{color:var(--muted); font-size:0.95rem}
+.req{color:#c0392b; margin-left:4px}
