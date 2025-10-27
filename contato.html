@@ -11,7 +11,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html"><img src="/images/Logo_1.png" alt="Brunetto ACS - Logo"></a>
+      <a class="logo" href="index.html"><img src="images/Logo_1.png" alt="Brunetto ACS - Logo"></a>
 
       <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
         <ul>
@@ -46,64 +46,98 @@
   <!-- CONTATO: formulário + informações -->
   <main class="section contato-section">
     <div class="container contato-inner">
-      <div class="contato-grid">
-        <!-- Form -->
-        <div class="contato-form-wrapper">
-          <h2>Envie sua mensagem</h2>
-          <p class="muted">Respondesmos em até 24 horas úteis. Informe o máximo de detalhes possível.</p>
-
-          <form id="contactForm" class="contato-form" novalidate>
-            <div class="form-row">
-              <label for="nome">Nome<span class="req">*</span></label>
-              <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" />
+      <!-- Form -->
+      <div class="contato-form-wrapper">
+        <h2>Envie sua mensagem</h2>
+        <p class="muted">Respondesmos em até 24 horas úteis. Informe o máximo de detalhes possível.</p>
+        
+        <form id="contactForm" class="contato-form" novalidate>
+          <div class="form-row">
+            <label for="nome">Nome<span class="req">*</span></label>
+            <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" />
+          </div>
+          
+          <div class="form-row two-cols">
+            <div class="col">
+              <label for="email">E-mail<span class="req">*</span></label>
+              <input id="email" name="email" type="email" required placeholder="seu@email.com" />
             </div>
-
-            <div class="form-row two-cols">
-              <div class="col">
-                <label for="email">E-mail<span class="req">*</span></label>
-                <input id="email" name="email" type="email" required placeholder="seu@email.com" />
-              </div>
-              <div class="col">
-                <label for="telefone">Telefone</label>
-                <input id="telefone" name="telefone" type="tel" placeholder="(xx) xxxxx-xxxx" />
-              </div>
+            <div class="col">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" placeholder="(xx) xxxxx-xxxx" />
             </div>
-
-            <div class="form-row">
-              <label for="assunto">Assunto</label>
-              <input id="assunto" name="assunto" type="text" placeholder="Ex.: Orçamento - Pintura residencial" />
-            </div>
-
-            <div class="form-row">
-              <label for="mensagem">Mensagem<span class="req">*</span></label>
-              <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Descreva seu projeto, área aproximada, prazo..."></textarea>
-            </div>
-
-            <div class="form-row form-actions">
-              <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-              <button type="reset" class="btn btn-outline">Limpar</button>
-            </div>
-
-            <div id="formFeedback" class="form-feedback" aria-live="polite" hidden></div>
-          </form>
-        </div>
-
-        <!-- Info + mapa -->
-        <aside class="contato-info">
-          <h3>Informações de contato</h3>
-
-          <ul class="info-list">
-            <li><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 (11) 99999-9999</a></li>
+          </div>
+          
+          <div class="form-row">
+            <label for="assunto">Assunto</label>
+            <input id="assunto" name="assunto" type="text" placeholder="Ex.: Orçamento - Pintura residencial" />
+          </div>
+          
+          <div class="form-row">
+            <label for="mensagem">Mensagem<span class="req">*</span></label>
+            <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Descreva seu projeto, área aproximada..."></textarea>
+          </div>
+          
+          <div class="form-row form-actions">
+            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+            <button type="reset" class="btn btn-outline">Limpar</button>
+          </div>
+          
+          <div id="formFeedback" class="form-feedback" aria-live="polite" hidden></div>
+        </form>
+      </div>
+      
+    <div class="Home-Services">
+      <h1>Onde nos encontrar</h1>
+      <p>Agende uma visita, venha até nossa localização ou entre em contato!</p>
+    </div>
+    <div class="contato-grid">
+      <!-- Info + mapa -->
+      <aside class="contato-info">
+        <h3>Matriz Videira</h3>
+        
+        <ul class="info-list">
+          <li><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 (49)3566-5190</a></li>
+            <li><strong>Celular 1:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
+            <li><strong>Celular 2:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
+            <li><strong>Celular 3:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
             <li><strong>E-mail:</strong> <a href="mailto:contato@brunettoacs.com.br">contato@brunettoacs.com.br</a></li>
-            <li><strong>Endereço:</strong> Rua....., n... — Videira/SC</li>
+            <li><strong>Endereço:</strong>R. Geovani Carelli, 100 - Cidade Alta, Videira - SC, 89560-000</li>
             <li><strong>Atendimento:</strong> Seg — Sex / 08:00 — 18:00</li>
           </ul>
 
           <div class="map-wrap" aria-hidden="false">
             <!-- Substitua o src pelo embed do Google Maps do endereço real -->
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.999999!2d-46.655000!3d-23.564000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b999999999%3A0x9999999999999999!2sEndere%C3%A7o%20Exemplo!5e0!3m2!1spt-BR!2sbr!4v1600000000000"
-              width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.4039603492083!2d-51.181396924557916!3d-26.985768376603747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e14dfff0a7e1e5%3A0xb3e1d420ac8393d!2sBrunetto%20ACS!5e0!3m2!1spt-BR!2sbr!4v1761596439419!5m2!1spt-BR!2sbr" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="quick-actions">
+            <a class="btn btn-outline" href="servicos.html">Nossos Serviços</a>
+            <a class="btn btn-primary" href="tel:+5511999999999">Ligar Agora</a>
+          </div>
+        </aside>
+
+        <!-- Segunda filial da empresa -->
+        <aside class="contato-info">
+          <h3>Local 2</h3>
+
+          <ul class="info-list">
+            <li><strong>Telefone:</strong> <a href="tel:+5511999999999">+55 (49)3566-5190</a></li>
+            <li><strong>Celular 1:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
+            <li><strong>Celular 2:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
+            <li><strong>Celular 3:</strong> <a href="tel:+5511999999999">+55 (49)99999-9999</a></li>
+            <li><strong>E-mail:</strong> <a href="mailto:contato@brunettoacs.com.br">contato@brunettoacs.com.br</a></li>
+            <li><strong>Endereço:</strong>R. Geovani Carelli, 100 - Cidade Alta, Videira - SC, 89560-000</li>
+            <li><strong>Atendimento:</strong> Seg — Sex / 08:00 — 18:00</li>
+          </ul>
+
+          <div class="map-wrap" aria-hidden="false">
+            <!-- Substitua o src pelo embed do Google Maps do endereço real -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.4039603492083!2d-51.181396924557916!3d-26.985768376603747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e14dfff0a7e1e5%3A0xb3e1d420ac8393d!2sBrunetto%20ACS!5e0!3m2!1spt-BR!2sbr!4v1761596439419!5m2!1spt-BR!2sbr" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
 
           <div class="quick-actions">

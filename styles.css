@@ -196,6 +196,15 @@ body{
   display:block;
 }
 
+.Home-Services{
+  margin: 3rem 0 2rem 0;
+}
+
+.Home-Services h1, p{
+  margin: 0;
+  padding: 0;
+}
+
 /* BOTÕES no hero */
 /* Sobrescreve .btn-primary apenas dentro do hero: laranja #f6821f */
 .hero .btn-primary{
@@ -530,7 +539,7 @@ body{
 .contato-inner{padding-top:0;}
 .contato-grid{
   display:grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 1fr;
   gap:2rem;
   align-items:start;
 }
@@ -579,6 +588,7 @@ body{
 .contato-info{
   background:var(--surface);
   padding:1.25rem;
+  margin-top: 2rem;
   border-radius:12px;
   box-shadow:var(--shadow);
 }
@@ -606,7 +616,7 @@ body{
   align-items:center;
   justify-content:center;
   background:var(--whatsapp-bg);
-  color:#fff;
+  color:#fff; /* Cor do ícone */
   text-decoration:none;
   box-shadow: 0 8px 28px rgba(2,6,23,0.18);
   z-index:var(--whatsapp-z);
@@ -615,6 +625,7 @@ body{
   outline: none;
   width: 90px;
   height: 90px;
+  font-size: 40px; /* Tamanho do ícone para Font Awesome */
 }
 
 /* leve zoom ao passar o mouse */
@@ -629,14 +640,6 @@ body{
   transform: scale(0.98);
 }
 
-/* SVG dentro do botão */
-.whatsapp-float svg{
-  width: 32px;
-  height: 32px;
-  display:block;
-  pointer-events:none;
-}
-
 /* acessibilidade: foco bem visível */
 .whatsapp-float:focus{
   box-shadow: 0 0 0 4px rgba(37,211,102,0.14), 0 14px 36px rgba(2,6,23,0.22);
@@ -647,12 +650,8 @@ body{
 /* adaptações mobile (menor e menos intrusivo) */
 @media (max-width:720px){
   .whatsapp-float{
-    width:var(--whatsapp-size-mobile);
-    height:var(--whatsapp-size-mobile);
-    right:14px;
-    bottom:14px;
+    font-size: 20px;
   }
-  .whatsapp-float svg{ width:20px; height:20px; }
 
   /* Ajustado para uma coluna para melhor legibilidade */
   .services-columns{ grid-template-columns: 1fr; }
