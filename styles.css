@@ -4,25 +4,25 @@
 
 /* Reset básico e variáveis */
 :root{
-    --bg: #f7f7f8;
-    --surface: #ffffff;
-    --primary: #303092;    /* azul principal - ajuste conforme referência */
-    --primary-600: #191957;
-    --muted: #71717a;
-    --radius: 12px;
-    --container: 1100px;
-    --gap: 1.25rem;
-    --shadow: 0 6px 22px rgba(11,99,214,0.08);
-    --radius-sm: 8px;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color-scheme: light;
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --primary: #303092;    /* azul principal - ajuste conforme referência */
+  --primary-600: #191957;
+  --muted: #71717a;
+  --radius: 12px;
+  --container: 1100px;
+  --gap: 1.25rem;
+  --shadow: 0 6px 22px rgba(11,99,214,0.08);
+  --radius-sm: 8px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
 
-    /* WhatsApp floating button */
-    --whatsapp-size: 64px;        /* tamanho do botão desktop */
-    --whatsapp-size-mobile: 52px; /* tamanho em mobile */
-    --whatsapp-bg: #25D366;       /* cor padrão do WhatsApp — altere se desejar */
-    --whatsapp-offset: 20px;      /* distância da borda direita/baixo */
-    --whatsapp-z: 1100;
+  /* WhatsApp floating button */
+  --whatsapp-size: 64px;        /* tamanho do botão desktop */
+  --whatsapp-size-mobile: 52px; /* tamanho em mobile */
+  --whatsapp-bg: #25D366;       /* cor padrão do WhatsApp — altere se desejar */
+  --whatsapp-offset: 20px;      /* distância da borda direita/baixo */
+  --whatsapp-z: 1100;
 }
 
 *{box-sizing:border-box}
