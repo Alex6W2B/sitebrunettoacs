@@ -7,7 +7,7 @@
     --bg: #f7f7f8;
     --surface: #ffffff;
     --primary: #303092;    /* azul principal - ajuste conforme referência */
-    --primary-600: #1d1d61;
+    --primary-600: #191957;
     --muted: #71717a;
     --radius: 12px;
     --container: 1100px;
@@ -87,7 +87,12 @@ body{
   border-radius:8px;
   font-weight:600;
 }
-.main-nav a:hover{color:var(--primary)}
+.main-nav a:hover{
+  padding:0.6rem 1rem;
+  background:var(--primary);
+  color:#fff;
+  box-shadow: var(--shadow);
+}
 
 .header-cta{margin-left:auto; display:flex; gap:0.6rem; align-items:center}
 
@@ -111,13 +116,22 @@ body{
   box-shadow: var(--shadow);
 }
 
-.btn-primary:hover{background:var(--primary-600)}
+.btn-primary:hover{
+  padding:0.8rem 1.2rem;
+  background:var(--primary-600)
+}
 
 .btn-outline{
   background:transparent;
   color:var(--primary);
   border:1px solid rgba(11,99,214,0.12);
 }
+.btn-outline:hover{
+  background:var(--primary);
+  color:#fff;
+  box-shadow: var(--shadow);
+}
+
 .btn-ghost{
   background:transparent;
   color:#111827;
