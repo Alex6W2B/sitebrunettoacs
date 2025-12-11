@@ -18,17 +18,15 @@
                 <a class="logo" href="index.html">
                     <img src="images/Logo_1.png" alt="Brunetto ACS - Logo" />
                 </a>
-
-                <div class="header-cta">
-                    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="servicos.html">Serviços</a></li>
-                            <li><a href="sobre.html">Sobre</a></li>
-                        </ul>
-                    </nav>
-                    <a class="btn btn-primary" href="contato.html">Contato</a>
-                </div>
+                
+                <nav class="header-cta main-nav" id="mainNav" aria-label="Navegação principal">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a class="btn btn-primary" href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
 
                 <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
                     <span></span><span></span><span></span>
@@ -62,10 +60,34 @@
         <!-- Serviços -->
         <div class="container">
             <div class="Home-Services">
-                <h1>Nossos Serviços</h1>
-                <p>Conheça nossa ampla gama de serviços em pinturas e revestimentos para todos os tipos de ambientes.</p>
+                <div class="section-header center"> <h2 class="section-title">Nossos Serviços</h2>
+                    <p class="section-intro">Conheça nossa ampla gama de serviços em pinturas e revestimentos para todos os tipos de ambientes.</p>
+                </div>
             </div>
+            <!-- Serviço Master -->
+            <article class="service-block service-featured">
+                <div class="carousel" data-carousel>
+                    <div class="carousel-track">
+                    <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura Industrial - 1"></div>
+                    <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura Industrial - 2"></div>
+                    <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura Industrial - 3"></div>
+                    </div>
+
+                    <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
+                    <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+                </div>
+
+                <div class="service-content">
+                    <h3>Pintura Industrial</h3>
+                    <p>Soluções de alto desempenho para proteção de estruturas metálicas, tubulações e equipamentos. Foco total em proteção anticorrosiva e adequação às normas de segurança.</p>
+                </div>
+            </article>
+
             <div class="services-columns">
+            </div>
+
+            <div class="services-columns">
+
                 <!-- Serviço A (block 1) -->
                 <article class="service-block">
                     <div class="carousel" data-carousel>
@@ -77,53 +99,27 @@
                         <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
                         <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
                     </div>
-                    <h3>Pintura Residencial</h3>
-                    <p>Serviços completos para residências: interiores, fachadas, reparos e acabamento fino.</p>
+                    <div class="service-content">
+                        <h3>Revestimento de Pisos</h3>
+                        <p>Sistemas em Epóxi e Uretano para pisos que exigem alta resistência ao tráfego de máquinas e ataques químicos. Acabamento monolítico, fácil de limpar e de alta durabilidade.</p>
+                    </div>
                 </article>
 
                 <!-- Serviço B (block 2) -->
                 <article class="service-block">
-                    <div class="carousel" data-carousel>
-                        <div class="carousel-track">
-                        <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-                        <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-                        <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
-                        </div>
-                        <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-                        <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+                <div class="carousel" data-carousel>
+                    <div class="carousel-track">
+                    <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
+                    <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
+                    <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
                     </div>
-                    <h3>Pintura Comercial</h3>
-                    <p>Projetos para lojas, condomínios e empresas com logística e cronograma adaptados.</p>
-                </article>
-
-                <!-- Serviço C (block 3) -->
-                <article class="service-block">
-                    <div class="carousel" data-carousel>
-                        <div class="carousel-track">
-                        <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-                        <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-                        <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
-                        </div>
-                        <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-                        <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-                    </div>
-                    <h3>Revestimentos Especiais</h3>
-                    <p>Grafiatos, texturas e efeitos decorativos para valorizar ambientes residenciais e comerciais.</p>
-                </article>
-
-                <!-- Serviço C (block 4) -->
-                <article class="service-block">
-                    <div class="carousel" data-carousel>
-                        <div class="carousel-track">
-                        <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-                        <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-                        <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
-                        </div>
-                        <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-                        <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-                    </div>
-                    <h3>Revestimentos Especiais</h3>
-                    <p>Grafiatos, texturas e efeitos decorativos para valorizar ambientes residenciais e comerciais.</p>
+                    <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
+                    <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+                </div>
+                <div class="service-content">
+                    <h3>Impermeabilização</h3>
+                    <p>Proteção definitiva contra infiltrações e umidade. Soluções técnicas para lajes, reservatórios e fundações, prevenindo patologias e garantindo a saúde da edificação.</p>
+                </div>
                 </article>
             </div>
 
@@ -135,26 +131,38 @@
 
         <!-- Por que nos escolher -->
         <section id="about" class="section section-why">
-            <div class="container">
-                <h2 class="section-title">Por que nos escolher?</h2>
-                <p class="section-intro">Compromisso com a qualidade e satisfação do cliente em cada projeto.</p>
+        <div class="container">
+            <div class="section-header center"> <h2 class="section-title">Por que escolher a Brunetto ACS?</h2>
+                <p class="section-intro">Unimos expertise técnica, segurança normativa e materiais de alta performance para proteger seu patrimônio.</p>
+            </div>
 
-                <div class="why-grid">
-                    <div class="why-item">
-                        <h3>Profissionais Qualificados</h3>
-                        <p>Nossa equipe é treinada e experiente, garantindo um trabalho de excelência.</p>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-helmet-safety"></i>
                     </div>
-                    <div class="why-item">
-                        <h3>Materiais de Qualidade</h3>
-                        <p>Utilizamos apenas produtos de primeira linha para resultados duradouros.</p>
+                    <h3>Expertise Técnica</h3>
+                    <p>Equipe certificada em normas de segurança (NRs) e treinada para executar obras complexas com excelência e risco zero.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-layer-group"></i>
                     </div>
-                    <div class="why-item">
-                        <h3>Compromisso com Prazos</h3>
-                        <p>Entregamos nossos serviços dentro do prazo acordado, respeitando seu tempo.</p>
+                    <h3>Materiais de Alta Performance</h3>
+                    <p>Utilizamos tecnologias de ponta em revestimentos e tintas industriais para garantir proteção duradoura e resistência superior.</p>
+                </div>
+
+                <div class="why-item">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-stopwatch"></i>
                     </div>
+                    <h3>Gestão Eficiente de Prazos</h3>
+                    <p>Execução planejada com cronogramas rigorosos para entregar sua obra no tempo certo, sem prejudicar sua operação.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- CTA principal -->
         <section id="contact" class="section section-cta">
@@ -198,6 +206,26 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 
         <script>
+            //  Estilo para link ativo na navbar
+            document.addEventListener('DOMContentLoaded', function() {
+                // Pega o caminho atual da URL (ex: /sobre.html)
+                const currentLocation = location.pathname.split("/").pop();
+                
+                // Seleciona todos os links da navegação
+                const navLinks = document.querySelectorAll('.main-nav a');
+
+                navLinks.forEach(link => {
+                    // Pega o href do link (ex: sobre.html)
+                    const linkHref = link.getAttribute('href');
+
+                    // 1. Verifica se é a página exata
+                    // 2. OU se estamos na home (index.html) e o caminho está vazio (root)
+                    if (linkHref === currentLocation || (currentLocation === "" && linkHref === "index.html")) {
+                        link.classList.add('ativo');
+                    }
+                });
+            });
+        
             // JS mínimo só para o menu mobile e ano no footer
             (function () {
                 // ano no footer

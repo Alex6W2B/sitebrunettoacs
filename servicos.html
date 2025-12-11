@@ -18,17 +18,14 @@
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="images/Logo_1.png" alt="Brunetto ACS - Logo"></a>
 
-
-      <div class="header-cta">
-          <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-              <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="servicos.html">Serviços</a></li>
-                  <li><a href="sobre.html">Sobre</a></li>
-              </ul>
-          </nav>
-          <a class="btn btn-primary" href="contato.html">Contato</a>
-      </div>
+      <nav class="header-cta main-nav" id="mainNav" aria-label="Navegação principal">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a class="btn btn-primary" href="contato.html">Contato</a></li>
+          </ul>
+      </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
         <span></span><span></span><span></span>
@@ -50,19 +47,26 @@
   <main class="services-page">
     <div class="container">
       
-      <article class="service-block">
+      <!-- Serviço Master -->
+      <article class="service-block service-featured">
           <div class="carousel" data-carousel>
             <div class="carousel-track">
-              <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-              <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-              <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
+              <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura Industrial - 1"></div>
+              <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura Industrial - 2"></div>
+              <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura Industrial - 3"></div>
             </div>
-              <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-              <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+            <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
+            <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
           </div>
-          <h3>Pintura Residencial</h3>
-          <p>Serviços completos para residências: interiores, fachadas, reparos e acabamento fino.</p>
-        </article>
+
+          <div class="service-content">
+            <h3>Pintura Industrial</h3>
+            <p>Soluções de alto desempenho para proteção de estruturas metálicas, tubulações e equipamentos. Foco total em proteção anticorrosiva e adequação às normas de segurança.</p>
+          </div>
+      </article>
+
+      <div class="services-columns">
+      </div>
 
       <div class="services-columns">
 
@@ -77,8 +81,10 @@
               <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
               <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
           </div>
-          <h3>Pintura Residencial</h3>
-          <p>Serviços completos para residências: interiores, fachadas, reparos e acabamento fino.</p>
+          <div class="service-content">
+            <h3>Revestimento de Pisos</h3>
+            <p>Sistemas em Epóxi e Uretano para pisos que exigem alta resistência ao tráfego de máquinas e ataques químicos. Acabamento monolítico, fácil de limpar e de alta durabilidade.</p>
+          </div>
         </article>
 
         <!-- Serviço B (block 2) -->
@@ -92,8 +98,10 @@
               <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
               <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
           </div>
-          <h3>Pintura Comercial</h3>
-          <p>Projetos para lojas, condomínios e empresas com logística e cronograma adaptados.</p>
+          <div class="service-content">
+            <h3>Impermeabilização</h3>
+            <p>Proteção definitiva contra infiltrações e umidade. Soluções técnicas para lajes, reservatórios e fundações, prevenindo patologias e garantindo a saúde da edificação.</p>
+          </div>
         </article>
 
         <!-- Serviço C (block 3) -->
@@ -107,8 +115,10 @@
               <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
               <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
           </div>
-          <h3>Revestimentos Especiais</h3>
-          <p>Grafiatos, texturas e efeitos decorativos para valorizar ambientes residenciais e comerciais.</p>
+          <div class="service-content">
+            <h3>Pinturas imobiliárias</h3>
+            <p>Acabamento refinado para edifícios comerciais, condomínios e residências. Valorize seu imóvel com técnicas modernas de pintura, texturas e tratamento de fachadas.</p>
+          </div>
         </article>
 
         <!-- Serviço D (block 4) -->
@@ -122,38 +132,10 @@
               <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
               <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
           </div>
-          <h3>Manutenção e Restauração</h3>
-          <p>Conserto de fachadas, repinturas e restauro com produtos e técnicas apropriadas.</p>
-        </article>
-
-        <!-- Serviço E (block 5) -->
-        <article class="service-block">
-          <div class="carousel" data-carousel>
-            <div class="carousel-track">
-              <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-              <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-              <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
-            </div>
-              <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-              <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
+          <div class="service-content">
+            <h3>Manutenção e Restauração</h3>
+            <p>Revitalização de fachadas e estruturas desgastadas pelo tempo. Serviços de hidrojateamento, tratamento de trincas e repintura para devolver a vida útil ao seu patrimônio.</p>
           </div>
-          <h3>Pintura Predial</h3>
-          <p>Serviços especializados para condomínios e edifícios, garantindo durabilidade e estética.</p>
-        </article>
-
-        <!-- Serviço F (block 6) -->
-        <article class="service-block">
-          <div class="carousel" data-carousel>
-            <div class="carousel-track">
-              <div class="carousel-slide"><img src="images/teste1.webp" alt="Pintura residencial - 1"></div>
-              <div class="carousel-slide"><img src="images/teste2.webp" alt="Pintura residencial - 2"></div>
-              <div class="carousel-slide"><img src="images/teste3.webp" alt="Pintura residencial - 3"></div>
-            </div>
-              <button class="carousel-btn prev" aria-label="Imagem anterior">‹</button>
-              <button class="carousel-btn next" aria-label="Próxima imagem">›</button>
-          </div>
-          <h3>Impermeabilização</h3>
-          <p>Proteção contra umidade e infiltrações para lajes, paredes e telhados.</p>
         </article>
 
       </div>
@@ -163,6 +145,63 @@
         <a class="btn btn-outline" href="contato.html">Solicitar Orçamento</a>
       </div>
     </div>
+
+    <section class="section clients-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">Quem confia no nosso trabalho</h2>
+        <p class="section-intro">Alguns dos principais parceiros que já transformaram seus ambientes conosco.</p>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-item">
+          <img src="./Logos_Clientes/Brf.webp" alt="BRF">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/Seara.webp" alt="Seara">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/JBS.webp" alt="JBS">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/minerva.webp" alt="Minerva">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/cargill.webp" alt="Cargill">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/fetz.webp" alt="Fetz">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/logofb.webp" alt="FB Engenharia">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/Viero.webp" alt="Viero">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/ScalaConstrutora.webp" alt="Scala">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+10" alt="Lagua">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/zalc.webp" alt="Zalc Construtora">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+12" alt="Crown">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/master.webp" alt="Master Alimentos">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+14" alt="Regivel">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+14" alt="Mautiqueira">
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- CTA principal -->
         <section id="contact" class="section section-cta">
@@ -208,6 +247,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 
   <script>
+    //  Estilo para link ativo na navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pega o caminho atual da URL (ex: /sobre.html)
+        const currentLocation = location.pathname.split("/").pop();
+        
+        // Seleciona todos os links da navegação
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        navLinks.forEach(link => {
+            // Pega o href do link (ex: sobre.html)
+            const linkHref = link.getAttribute('href');
+
+            // 1. Verifica se é a página exata
+            // 2. OU se estamos na home (index.html) e o caminho está vazio (root)
+            if (linkHref === currentLocation || (currentLocation === "" && linkHref === "index.html")) {
+                link.classList.add('ativo');
+            }
+        });
+    });
+    
     // JS mínimo só para o menu mobile e ano no footer
     (function () {
         // ano no footer

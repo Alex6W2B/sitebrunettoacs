@@ -18,16 +18,14 @@
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="images/Logo_1.png" alt="Brunetto ACS - Logo"></a>
 
-      <div class="header-cta">
-          <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-              <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="servicos.html">Serviços</a></li>
-                  <li><a href="sobre.html">Sobre</a></li>
-              </ul>
-          </nav>
-          <a class="btn btn-primary" href="contato.html">Contato</a>
-      </div>
+      <nav class="header-cta main-nav" id="mainNav" aria-label="Navegação principal">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a class="btn btn-primary" href="contato.html">Contato</a></li>
+          </ul>
+      </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
         <span></span><span></span><span></span>
@@ -109,6 +107,63 @@
     </div>
   </section>
 
+  <section class="section clients-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2 class="section-title">Quem confia no nosso trabalho</h2>
+        <p class="section-intro">Alguns dos principais parceiros que já transformaram seus ambientes conosco.</p>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-item">
+          <img src="./Logos_Clientes/Brf.webp" alt="BRF">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/Seara.webp" alt="Seara">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/JBS.webp" alt="JBS">
+        </div>
+        <div class="client-item">
+          <img src="./Logos_Clientes/minerva.webp" alt="Minerva">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/cargill.webp" alt="Cargill">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/fetz.webp" alt="Fetz">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/logofb.webp" alt="FB Engenharia">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/Viero.webp" alt="Viero">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/ScalaConstrutora.webp" alt="Scala">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+10" alt="Lagua">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/zalc.webp" alt="Zalc Construtora">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+12" alt="Crown">
+        </div>
+        <div class="client-item">
+            <img src="./Logos_Clientes/master.webp" alt="Master Alimentos">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+14" alt="Regivel">
+        </div>
+        <div class="client-item">
+            <img src="https://via.placeholder.com/150x80?text=Logo+14" alt="Mautiqueira">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA principal (exatamente o bloco que você forneceu) -->
   <section id="contact" class="section section-cta">
     <div class="container cta-inner">
@@ -150,6 +205,26 @@
 
   <!-- SCRIPTS: menu mobile e ano -->
   <script>
+    //  Estilo para link ativo na navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pega o caminho atual da URL (ex: /sobre.html)
+        const currentLocation = location.pathname.split("/").pop();
+        
+        // Seleciona todos os links da navegação
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        navLinks.forEach(link => {
+            // Pega o href do link (ex: sobre.html)
+            const linkHref = link.getAttribute('href');
+
+            // 1. Verifica se é a página exata
+            // 2. OU se estamos na home (index.html) e o caminho está vazio (root)
+            if (linkHref === currentLocation || (currentLocation === "" && linkHref === "index.html")) {
+                link.classList.add('ativo');
+            }
+        });
+    });
+
     (function () {
       // ano no footer
       const y = document.getElementById('year');

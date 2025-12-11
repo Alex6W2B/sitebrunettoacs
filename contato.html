@@ -17,16 +17,14 @@
     <div class="container header-inner">
       <a class="logo" href="index.html"><img src="images/Logo_1.png" alt="Brunetto ACS - Logo"></a>
 
-      <div class="header-cta">
-        <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <nav class="header-cta main-nav" id="mainNav" aria-label="Navegação principal">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="sobre.html">Sobre</a></li>
+              <li><a class="btn btn-primary" href="contato.html">Contato</a></li>
           </ul>
-        </nav>
-        <a class="btn btn-primary" href="contato.html">Contato</a>
-      </div>
+      </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
         <span></span><span></span><span></span>
@@ -107,6 +105,11 @@
               <li><strong>Atendimento:</strong> Seg - Sex / 08:00 - 18:00</li>
             </ul>
             
+            <div class="quick-actions">
+              <a class="btn btn-outline" href="servicos.html">Nossos Serviços</a>
+              <a class="btn btn-primary" href="tel:+5511999999999">Ligar Agora</a>
+            </div>
+            
             <h3 style="margin-top: 3rem;">Matriz Videira</h3>
             <ul class="info-list">
               <li><strong>Endereço:</strong>R. Geovani Carelli, 100 - Cidade Alta, Videira - SC, 89560-000</li>
@@ -122,20 +125,16 @@
           <div>
             <h3 style="margin-top: 3rem;">Filial Rio Verde</h3>
             <ul class="info-list">
-              <li><strong>Endereço:</strong>R. Geovani Carelli, 100 - Cidade Alta, Videira - SC, 89560-000</li>
+              <li><strong>Endereço:</strong>R. carajas Q 29 lote 06 - Parque das laranjeiras, Rio Verde - GO, 75908-030</li>
             </ul>
             <div class="map-wrap" aria-hidden="false">
               <!-- Substitua o src pelo embed do Google Maps do endereço real -->
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.4039603492083!2d-51.181396924557916!3d-26.985768376603747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e14dfff0a7e1e5%3A0xb3e1d420ac8393d!2sBrunetto%20ACS!5e0!3m2!1spt-BR!2sbr!4v1761596439419!5m2!1spt-BR!2sbr" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15194.624599005114!2d-50.96172028013732!3d-17.807850201873656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9361dcf363e82829%3A0x2e939b91ee03d7c6!2sR.%20Caraj%C3%A1s%2C%20Q%2029%20-%20Parque%20Laranjeiras%2C%20Rio%20Verde%20-%20GO%2C%2075908-030!5e0!3m2!1spt-BR!2sbr!4v1765484454139!5m2!1spt-BR!2sbr" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
           </div>
 
-          <div class="quick-actions">
-            <a class="btn btn-outline" href="servicos.html">Nossos Serviços</a>
-            <a class="btn btn-primary" href="tel:+5511999999999">Ligar Agora</a>
-          </div>
         </aside>
       </div>
     </div>
@@ -182,6 +181,26 @@
 
   <!-- SCRIPTS: menu mobile, form handling, ano -->
   <script>
+    //  Estilo para link ativo na navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pega o caminho atual da URL (ex: /sobre.html)
+        const currentLocation = location.pathname.split("/").pop();
+        
+        // Seleciona todos os links da navegação
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        navLinks.forEach(link => {
+            // Pega o href do link (ex: sobre.html)
+            const linkHref = link.getAttribute('href');
+
+            // 1. Verifica se é a página exata
+            // 2. OU se estamos na home (index.html) e o caminho está vazio (root)
+            if (linkHref === currentLocation || (currentLocation === "" && linkHref === "index.html")) {
+                link.classList.add('ativo');
+            }
+        });
+    });
+    
     (function () {
       // ano no footer
       const y = document.getElementById('year');
