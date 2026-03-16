@@ -171,7 +171,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <p>© <span id="year"></span> DeOlho Estrategias. Todos os direitos reservados.</p>
+        <p>Copyright © <span id="year"></span> DeOlho Estrategias.</p>
       </div>
       <div class="footer-right">
         <!--SEGUNDA SESSÃO-->
@@ -216,21 +216,24 @@
         });
       }
 
-      // Form handling (simula envio: valida e mostra mensagem)
+      // Form handling (Envio real usando FormSubmit via AJAX)
       const form = document.getElementById('contactForm');
       const feedback = document.getElementById('formFeedback');
 
       if (form) {
         form.addEventListener('submit', (ev) => {
-          ev.preventDefault();
+          ev.preventDefault(); // Impede a página de recarregar
           feedback.hidden = true;
           feedback.className = 'form-feedback';
 
-          // validação simples
+          // Pega os valores preenchidos
           const nome = form.nome.value.trim();
           const email = form.email.value.trim();
+          const telefone = form.telefone.value.trim();
+          const assunto = form.assunto.value.trim();
           const mensagem = form.mensagem.value.trim();
 
+          // Validação simples
           if (!nome || !email || !mensagem) {
             feedback.textContent = 'Por favor, preencha os campos obrigatórios: Nome, E-mail e Mensagem.';
             feedback.classList.add('error');
@@ -238,17 +241,39 @@
             return;
           }
 
-          // simular envio (substitua por fetch/AJAX real para envio ao servidor)
-          feedback.textContent = 'Enviando...';
+          // Mostra mensagem de "Enviando"
+          feedback.textContent = 'Enviando sua mensagem...';
           feedback.classList.add('sending');
           feedback.hidden = false;
 
-          setTimeout(() => {
+          // Dispara os dados para o FormSubmit via Fetch API
+          fetch("https://formsubmit.co/ajax/alexandrebastiani2004@gmail.com", { //pinturasbrunetto@formatto.com.br
+            method: "POST",
+            headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                Nome: nome,
+                Email: email,
+                Telefone: telefone,
+                Assunto: assunto,
+                Mensagem: mensagem
+            })
+          })
+          .then(response => response.json())
+          .then(data => {
             feedback.classList.remove('sending');
             feedback.classList.add('success');
             feedback.textContent = 'Mensagem enviada com sucesso! Em breve entraremos em contato.';
-            form.reset();
-          }, 900);
+            form.reset(); // Limpa o formulário
+          })
+          .catch(error => {
+            feedback.classList.remove('sending');
+            feedback.classList.add('error');
+            feedback.textContent = 'Erro ao enviar. Por favor, tente novamente ou nos chame no WhatsApp.';
+            console.error('Erro no envio:', error);
+          });
         });
       }
     })();
