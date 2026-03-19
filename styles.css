@@ -576,11 +576,72 @@ header nav ul li .btn{
 
   
 /* Página Sobre --------------------------------------------------------------------------------------*/
-.hero-sobre{
-  padding:8rem 0;
-  background: linear-gradient(to top, #081244 0%, #303092 100%);
-  color: #fff;
-  text-align: center;
+.hero-sobre {
+    padding: 8rem 0;
+    text-align: center;
+    color: #fff;
+    position: relative; /* Garante que o pseudo-elemento fique contido */
+    overflow: hidden;    /* Esconde o excesso da animação */
+    
+    /* Define o gradiente FINAL e ESTÁTICO (paleta original) */
+    background: linear-gradient(to top, #081244 0%, #303092 100%);
+}
+
+/* Pseudo-elemento apenas para a animação */
+.hero-sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Gradiente expandido para a animação ter "espaço" para correr */
+    background: linear-gradient(-45deg, #081244, #191957, #303092, #191957);
+    background-size: 400% 400%;
+    
+    /* Configuração da Animação:
+       - 10s: Duração
+       - ease-out: Começa rápido, termina devagar (suave)
+       - 1: Roda APENAS UMA VEZ
+       - forwards: Mantém o estado final da animação (opacidade 0)
+    */
+    animation: gradientIntro 5s ease-out 1 forwards;
+    
+    z-index: 1; /* Fica atrás do conteúdo */
+    pointer-events: none; /* Não interfere nos cliques */
+}
+
+/* 3. Garante que o conteúdo (texto) fique ACIMA da animação */
+.hero-sobre .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 4. A Keyframe da Animação: Move o gradiente e depois faz ele sumir */
+@keyframes gradientIntro {
+    0% {
+        background-position: 0% 50%;
+        opacity: 1; /* Começa visível */
+    }
+    50% {
+        background-position: 100% 50%;
+        opacity: 1; /* Continua visível no meio */
+    }
+    100% {
+        background-position: 0% 50%;
+        opacity: 0; /* No final, o pseudo-elemento fica invisível */
+    }
+}
+
+/*ANIMAÇÃO TEXTO*/
+.hero-content {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hsob {
