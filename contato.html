@@ -247,13 +247,15 @@
           feedback.hidden = false;
 
           // Dispara os dados para o FormSubmit via Fetch API
-          fetch("https://formsubmit.co/ajax/alexandrebastiani2004@gmail.com", { //pinturasbrunetto@formatto.com.br
+          fetch("https://formsubmit.co/ajax/pinturasbrunetto@formatto.com.br", { //Alterando o email altera-se o destino das mensagens preenchidas no formulário.
             method: "POST",
             headers: { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
+                _subject: "Novo Contato pelo Site - Pinturas Brunetto", // Muda o assunto do e-mail
+                _template: "box", // Deixa o e-mail com um visual de tabela mais limpo
                 Nome: nome,
                 Email: email,
                 Telefone: telefone,
