@@ -706,26 +706,26 @@ header nav ul li .btn{
 
 /* Grid Flexível */
 .clients-grid {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha */
-    justify-content: center; /* Centraliza tudo (inclusive a última linha incompleta) */
-    gap: 1rem; /* Espaço entre os cartões */
-    margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha */
+  justify-content: center; /* Centraliza tudo (inclusive a última linha incompleta) */
+  gap: 1rem; /* Espaço entre os cartões */
+  margin-top: 2rem;
 }
 
 /* O Cartão da Logo */
 .client-item {
-    background: #ffffff;
-    width: 200px;       /* Largura fixa para uniformidade */
-    height: 140px;      /* Altura fixa */
-    border-radius: 12px;
-    display: flex;
-    align-items: center;     /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Sombra suave */
-    border: 1px solid rgba(0,0,0,0.04);
-    transition: all 0.3s ease;
+  background: #ffffff;
+  width: 200px;       /* Largura fixa para uniformidade */
+  height: 140px;      /* Altura fixa */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;     /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Sombra suave */
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
 }
 
 /* A Imagem da Logo em si */
@@ -760,8 +760,8 @@ header nav ul li .btn{
     }
     .client-item {
         /* No mobile, diminui um pouco o tamanho para caber mais na tela */
-        width: 180px; 
-        height: 110px;
+        width: 150px;
+        height: 90px;
     }
     .section-header.center {
         margin-bottom: 1.5rem;
@@ -1021,3 +1021,235 @@ img{max-width:100%; height:auto; display:block}
 /* small helpers used by contact page */
 .muted{color:var(--muted); font-size:0.95rem}
 .req{color:#c0392b; margin-left:4px}
+
+
+/* ==========================================================================
+  FOOTER COMPLETO E ASSINATURA DA AGÊNCIA
+  ========================================================================== */
+
+.site-footer {
+  background-color: #0b1226; /* Fundo bem escuro e elegante, combinando com o topo do Hero */
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0; /* O padding agora é controlado por seções internas */
+  border-top: 4px solid var(--primary); /* Linha azul separadora no topo do footer */
+}
+
+/* Área Superior (Colunas) */
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.brand-col .footer-logo {
+  max-width: 220px;
+  margin-bottom: 1rem;
+  /* Se a logo do cliente for escura, ative o filtro abaixo para deixá-la branca: */
+  /* filter: brightness(0) invert(1); */ 
+}
+
+.brand-col p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Redes Sociais do Cliente */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Links Rápidos e Contato */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.footer-col ul li i {
+  color: var(--primary); /* Ícones de contato com a cor da marca */
+  width: 16px;
+}
+
+.links-col ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 5px; /* Efeito sutil de movimento */
+}
+
+/* Área Inferior (Copyright e Sua Agência) */
+.footer-bottom {
+  background-color: #050a17; /* Um tom ainda mais escuro para o rodapé final */
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+/* Destaque para a Sua Agência */
+.assinatura-agencia {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.assinatura-agencia p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5); /* Discreto */
+}
+
+.agencia-logo {
+  height: 24px; /* Ajuste a altura conforme a proporção da sua logo */
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  opacity: 0.7; /* Começa um pouco transparente para não ofuscar o cliente */
+}
+
+.assinatura-agencia a:hover .agencia-logo {
+  opacity: 1; /* Acende totalmente ao passar o mouse */
+  transform: scale(1.05);
+}
+
+/* Responsividade do Footer */
+@media (max-width: 980px) {
+  .footer-top {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      text-align: center;
+  }
+  
+  .brand-col .footer-logo {
+      margin: 0 auto 1rem auto;
+  }
+  
+  .social-links {
+      justify-content: center;
+  }
+  
+  .footer-col ul li {
+      justify-content: center;
+  }
+  
+  .footer-inner {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+  }
+  
+  .assinatura-agencia {
+      flex-direction: column;
+      gap: 0.5rem;
+  }
+}
+
+/* ==========================================================================
+  Botão chamada de ação
+  ========================================================================== */
+.btn-dynamic {
+    position: relative;
+    overflow: hidden;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* O fundo laranja que entra em diagonal */
+.btn-dynamic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%; /* Fica escondido fora do botão */
+    width: 100%;
+    height: 100%;
+    background-color: #f6821f; /* Cor chamativa (Laranja) */
+    transform: skewX(-20deg); /* Mantém a inclinação agressiva */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
+}
+
+/* O Ícone que começa invisível e menor */
+.btn-dynamic .btn-icon {
+    opacity: 0;
+    transform: translateX(-15px) scale(0.5);
+    transition: all 0.4s ease;
+    width: 0; /* Esconde o espaço do ícone */
+}
+
+/* A Mágica acontece no Hover */
+.btn-dynamic:hover::before {
+    left: 0;
+    transform: skewX(0deg); /* Endireita a cor enquanto preenche */
+}
+
+.btn-dynamic:hover {
+    transform: translateY(0px); /* Dá um salto 3D */
+    box-shadow: 0 15px 30px rgba(246, 130, 31, 0.4); /* Sombra pesada */
+    color: #fff;
+    border-color: #f6821f;
+}
+
+.btn-dynamic:hover .btn-icon {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    width: auto; /* Abre espaço para a seta */
+}
